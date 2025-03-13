@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon brick packaging - Lushan Yaxing Technology Development Co., Ltd</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-info h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.1em;
+        }
+        .product-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        @media screen and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+                padding: 10px;
+            }
+            .product-info {
+                padding: 10px;
+            }
+            .product-info h4 {
+                font-size: 1em;
+            }
+            .product-info p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="company-info">
+                <h1>Lushan Yaxing Technology Development Co., Ltd.</h1>
+            </div>
+            <div class="contact-info">
+                <p>National Customer Service Hotline</p>
+                <p class="phone">158 2486 3012</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class="active"><a href="../products.html">Products</a></li>
+                <li><a href="../news.html">News</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-list">
+            <div class="section-title">
+                <h2>Carbon brick packaging</h2>
+            </div>
+            <div class="product-categories">
+                <div class="product-category">
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="../images/products/semi-graphite1.jpg" alt="Special packaging for carbon blocks">
+                            <div class="product-info">
+                                <h4>The edge, edge and corner of the carbon block are packed with special kraft paper corner guard, plastic steel belt is tied tightly, and covered with rainproof film!</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="../images/products/semi-graphite2.jpg" alt="Products exported to Russia">
+                            <div class="product-info">
+                                <h4>Outer packaging of products exported to Russia</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="../images/products/semi-graphite3.jpg" alt="Products exported to Ukraine">
+                            <div class="product-info">
+                                <h4>Outer packaging of products exported to Ukraine</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="../images/products/semi-graphite4.jpg" alt="Packaging for domestic customers">
+                            <div class="product-info">
+                                <h4>Packaging photos of carbon blocks used by domestic customers</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/image-viewer.js"></script>
+</body>
+</html> 
