@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Lushan Yaxing Technology Development Co., Ltd</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .product-categories {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .product-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 0 auto;
+        }
+        .product-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .product-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .product-item a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+        }
+        .product-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .product-item a:hover h3 {
+            color: #0056b3;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-title h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        
+        /* Navigation bar styles */
+        nav {
+            background-color: #1a5f7a;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav ul li {
+            flex: 1;
+            max-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 20px 10px;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+        nav ul li.active a:after,
+        nav ul li:hover a:after {
+            width: 70%;
+        }
+        nav ul li.active,
+        nav ul li:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .product-categories {
+                padding: 15px;
+            }
+            .section-title h2 {
+                font-size: 1.8em;
+            }
+            /* Header responsive */
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+            .company-info h1 {
+                font-size: 1.5em;
+            }
+            .contact-info {
+                margin-top: 10px;
+            }
+            /* Navigation bar responsive */
+            nav {
+                padding: 0;
+            }
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+            nav ul li {
+                max-width: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+            nav ul li a {
+                padding: 15px;
+            }
+            nav ul li a:after {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-categories {
+                padding: 10px;
+            }
+            .product-item h3 {
+                font-size: 1.1em;
+            }
+            .section-title h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="company-info">
+                <h1>Lushan Yaxing Technology Development Co., Ltd.</h1>
+            </div>
+            <div class="contact-info">
+                <p>National Customer Service Hotline</p>
+                <p class="phone">158 2486 3012</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="active"><a href="products.html">Products</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-categories">
+            <div class="section-title">
+                <h2>Products</h2>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <a href="products/high-conductivity-graphite.html">
+                        <h3>Automatic forming of carbon brick</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/small-graphite.html">
+                        <h3>Quality control of carbon brick</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/semi-graphite.html">
+                        <h3>Carbon brick packaging</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/microporous.html">
+                        <h3>Preassembly inspection of carbon brick</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/ultra-microporous.html">
+                        <h3>Furnace bottom and hearth are pre-assembled on site</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/taphole.html">
+                        <h3>Preassembly of carbon resistant materials for large blast furnaces</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/high-thermal.html">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Graphite block）</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/furnace.html">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Microporous carbon block and ultra microporous carbon block）</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/ramming.html">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Graphite wall for hearth, inlaid graphite brick for copper cooling wall and graphite brick for copper cooling plate）</h3>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="products/other.html">
+                        <h3>Some pre-assembly site of carbon bricks for submerged arc furnaces</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/image-viewer.js"></script>
+</body>
+</html> 

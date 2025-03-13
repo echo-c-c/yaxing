@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Lushan Yaxing Technology Development Co., Ltd.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .news-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            box-sizing: border-box;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding: 0 15px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #0056b3;
+            border-radius: 2px;
+        }
+        .news-list {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .news-item {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+        .news-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .news-item h3 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .news-item:hover h3 {
+            color: #0056b3;
+        }
+        .news-date {
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .news-date i {
+            margin-right: 8px;
+            color: #0056b3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .news-content {
+                padding: 40px 15px;
+            }
+            .section-title h2 {
+                font-size: 28px;
+            }
+            .news-item {
+                padding: 20px;
+            }
+            .news-item h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .news-content {
+                padding: 30px 10px;
+            }
+            .section-title h2 {
+                font-size: 24px;
+            }
+            .news-item {
+                padding: 15px;
+            }
+            .news-item h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="company-info">
+                <h1>Lushan Yaxing Technology Development Co., Ltd.</h1>
+            </div>
+            <div class="contact-info">
+                <p>National Customer Service Hotline</p>
+                <p class="phone">158 2486 3012</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li class="active"><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="news-content">
+            <div class="section-title">
+                <h2>Industry News</h2>
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <a href="news/high-thermal-microporous.html">
+                        <h3>Development of New "High Thermal Conductivity and Corrosion Resistant Ultra-microporous Carbon Bricks"</h3>
+                        <p class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            Published: April 2, 2019
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lushan Yaxing Technology Development Co., Ltd</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-info h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.1em;
+        }
+        .product-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .more-link {
+            display: block;
+            text-align: right;
+            padding: 10px 20px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .more-link:hover {
+            color: #004499;
+        }
+        @media screen and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+                padding: 10px;
+            }
+            .product-info {
+                padding: 10px;
+            }
+            .product-info h4 {
+                font-size: 1em;
+            }
+            .product-info p {
+                font-size: 0.8em;
+            }
+        }
+        .company-intro {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            box-sizing: border-box;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding: 0 15px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #0056b3;
+            border-radius: 2px;
+        }
+        .intro-content {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        .intro-text {
+            margin-bottom: 30px;
+        }
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: left;
+            hyphens: auto;
+            word-spacing: normal;
+            word-break: break-word;
+        }
+        .learn-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .learn-more-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .learn-more-btn:hover {
+            background: #004494;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .company-intro {
+                padding: 40px 15px;
+            }
+            .intro-content {
+                padding: 30px;
+            }
+            .section-title h2 {
+                font-size: 32px;
+            }
+            .category-header h3 {
+                font-size: 1.3em;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+            .intro-content {
+                padding: 25px;
+            }
+            .section-title h2 {
+                font-size: 28px;
+            }
+            .intro-text p {
+                font-size: 15px;
+                line-height: 1.7;
+                text-align: left;
+                word-spacing: normal;
+                word-break: break-word;
+            }
+            .learn-more-btn {
+                padding: 10px 25px;
+            }
+            .category-header {
+                padding: 12px 15px;
+            }
+            .category-header h3 {
+                font-size: 1.2em;
+            }
+            .more-link {
+                font-size: 0.85em;
+                padding: 4px 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+                padding: 10px;
+            }
+            .product-info {
+                padding: 10px;
+            }
+            .product-info h4 {
+                font-size: 1em;
+            }
+            .product-info p {
+                font-size: 0.8em;
+            }
+            .company-intro {
+                padding: 30px 10px;
+            }
+            .intro-content {
+                padding: 20px 15px;
+            }
+            .section-title h2 {
+                font-size: 24px;
+            }
+            .intro-text p {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                text-align: left;
+                word-spacing: normal;
+                word-break: break-word;
+            }
+            .learn-more-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+            .category-header {
+                padding: 10px;
+            }
+            .category-header h3 {
+                font-size: 1.1em;
+            }
+            .more-link {
+                font-size: 0.8em;
+                padding: 3px 6px;
+            }
+        }
+
+        .product-category {
+            margin-bottom: 40px;
+        }
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        .category-header h3 {
+            margin: 0;
+            font-size: 1.4em;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .more-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 2;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .more-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateX(3px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .category-header {
+                padding: 12px 15px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .category-header h3 {
+                font-size: 1.2em;
+            }
+            .more-link {
+                font-size: 0.85em;
+                padding: 4px 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .category-header {
+                padding: 10px;
+            }
+            .category-header h3 {
+                font-size: 1.1em;
+            }
+            .more-link {
+                font-size: 0.8em;
+                padding: 3px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="company-info">
+                <h1>Lushan Yaxing Technology Development Co., Ltd.</h1>
+            </div>
+            <div class="contact-info">
+                <p>National Customer Service Hotline</p>
+                <p class="phone">158 2486 3012</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="images/carousel/slide1.jpg" alt="公司展示1">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/carousel/slide2.jpg" alt="公司展示2">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/carousel/slide3.jpg" alt="公司展示3">
+            </div>
+        </div>
+        <button class="carousel-button prev">&lt;</button>
+        <button class="carousel-button next">&gt;</button>
+        <div class="carousel-dots"></div>
+    </div>
+
+    <main>
+        <section class="company-intro">
+            <div class="section-title">
+                <h2>Company Profile</h2>
+            </div>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>Lushan Yaxing Technology Development Co., Ltd. is a specialized company engaged in the research, design, production, sales, and engineering services of carbon materials for blast furnaces and submerged arc furnaces. The company is ISO 9001 International Quality Management System certified.</p>
+                    <p>Adhering to the philosophy of "high-quality products and excellent services" based on customer needs, Lushan Yaxing collaborates with clients with integrity, striving to provide higher-quality carbon bricks and supporting refractory materials for the efficient and long-lasting operation of blast furnaces and submerged arc furnaces worldwide...</p>
+                    <div class="learn-more">
+                        <a href="about.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-list">
+            <div class="section-title">
+                <h2>Product List</h2>
+            </div>
+            <div class="product-categories">
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Automatic forming of carbon brick</h3>
+                        <a href="products/high-conductivity-graphite.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/graphite-isfahan.jpg" alt="Automatic screening and batching system for raw materials">
+                            <div class="product-info">
+                                <h4>Automatic screening and batching system for raw materials</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/graphite-1800m3.jpg" alt="Formed carbon brick">
+                            <div class="product-info">
+                                <h4>Formed carbon brick</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/graphite-2600m3.jpg" alt="Carbon brick molding production line">
+                            <div class="product-info">
+                                <h4>Carbon brick molding production line</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Quality control of carbon brick</h3>
+                        <a href="products/small-graphite.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/small-graphite1.jpg" alt="Air permeability and porosity tester">
+                            <div class="product-info">
+                                <h4>Air permeability and porosity tester</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/small-graphite2.jpg" alt="Chemical analysis of incoming raw materials">
+                            <div class="product-info">
+                                <h4>Chemical analysis of incoming raw materials</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/small-graphite3.jpg" alt="Balance Room">
+                            <div class="product-info">
+                                <h4>Balance Room</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Carbon brick packaging</h3>
+                        <a href="products/semi-graphite.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/semi-graphite1.jpg" alt="Special packaging for carbon blocks">
+                            <div class="product-info">
+                                <h4>The edge, edge and corner of the carbon block are packed with special kraft paper corner guard</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/semi-graphite2.jpg" alt="Products exported to Russia">
+                            <div class="product-info">
+                                <h4>Outer packaging of products exported to Russia</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/semi-graphite3.jpg" alt="Products exported to Ukraine">
+                            <div class="product-info">
+                                <h4>Outer packaging of products exported to Ukraine</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Preassembly inspection of carbon brick</h3>
+                        <a href="products/microporous.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/microporous1.jpg" alt="Drilling depth inspection">
+                            <div class="product-info">
+                                <h4>Drilling depth inspection</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/microporous2.jpg" alt="Vertical seam inspection">
+                            <div class="product-info">
+                                <h4>Vertical seam inspection</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/microporous3.jpg" alt="Diameter inspection">
+                            <div class="product-info">
+                                <h4>Diameter inspection</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Furnace bottom and hearth are pre-assembled on site</h3>
+                        <a href="products/ultra-microporous.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/ultra-microporous1.jpg" alt="New system 4150m³ in Baotou Steel × 2 graphite brick, high thermal conductivity carbon brick">
+                            <div class="product-info">
+                                <h4>New system 4150m³ in Baotou Steel × 2 graphite brick, high thermal conductivity carbon brick</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/ultra-microporous2.jpg" alt="4350m³ graphite brick of Bensteel">
+                            <div class="product-info">
+                                <h4>4350m³ graphite brick of Bensteel</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/ultra-microporous3.jpg" alt="The hearth of the 5,861 m³ blast furnace at Jiangsu Shagang Group is preassembled using microporous carbon blocks, with a hearth diameter of 19.38 meters.">
+                            <div class="product-info">
+                                <h4>The hearth of the 5,861 m³ blast furnace at Jiangsu Shagang Group is preassembled using microporous carbon blocks, with a hearth diameter of 19.38 meters.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Preassembly of carbon resistant materials for large blast furnaces</h3>
+                        <a href="products/taphole.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/taphole1.jpg" alt="The semi graphite carbon carbide brick is used for single hole iron mouth brick, and it isused in E # 604m3 blast furnace of Tata iron and Steel Company of India（2006)">
+                            <div class="product-info">
+                                <h4>The semi graphite carbon carbide brick is used for single hole iron mouth brick, and it is used in E # 604m3 blast furnace of Tata iron and Steel Company of India（2006)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/taphole2.jpg" alt="Super microporous carbon brick combined with drilling taphole brick is used in 3400m³blast furnace of Jinan Iron and steel company（2009)">
+                            <div class="product-info">
+                                <h4>Super microporous carbon brick combined with drilling taphole brick is used in 3400m³ blast furnace of Jinan Iron and steel company（2009)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/taphole3.jpg" alt="Preassembly site of semi graphite carbon silicon carbide roasted carbon block for bottom of 2500m³ blast furnace in Shanghai Baosteel Group No.1 plant（1998)">
+                            <div class="product-info">
+                                <h4>Preassembly site of semi graphite carbon silicon carbide roasted carbon block for bottom of 2500m³ blast furnace in Shanghai Baosteel Group No.1 plant（1998)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Graphite block）</h3>
+                        <a href="products/high-thermal.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/high-thermal1.jpg" alt="Preassembly site of graphite block for bottom of new 1 × 3200m3 blast furnace in Liaoning Anshan Iron and steel company（ 2002)">
+                            <div class="product-info">
+                                <h4>Preassembly site of graphite block for bottom of new 1 × 3200m³ blast furnace in Liaoning Anshan Iron and steel company（ 2002)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/high-thermal2.jpg" alt="The graphite block pre assembly site for the bottom of the new 1 × 3200m3 BF of Handan Iron and Steel Group in Hebei Province（ 2007)">
+                            <div class="product-info">
+                                <h4>The graphite block preassembly site for the bottom of the new 1 × 3200m³ BF of Handan Iron and Steel Group in Hebei Province（2007)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/high-thermal3.jpg" alt="Preassembly site of graphite block for bottom of 7 × 3200m3blast furnace in new Lipetsk, Russia（ 2008)">
+                            <div class="product-info">
+                                <h4>Preassembly site of graphite block for bottom of 7 × 3200m³ blast furnace in new Lipetsk, Russia（2008)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Microporous carbon block and ultra microporous carbon block）</h3>
+                        <a href="products/furnace.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/furnace1.jpg" alt="Preassembly site of ultra microporous carbon block for hearth of 2200m³ blast furnace in ISA iron and Steel Company of India（ 2008) Three layers.">
+                            <div class="product-info">
+                                <h4>Preassembly site of ultra microporous carbon block for hearth of 2200m³ blast furnace in ISA iron and Steel Company of India（ 2008) Three layers.</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/furnace2.jpg" alt="The preassembly site of 2500m³ BF bottom with microporous carbon block is carried out in Zhangjiagang Shagang Group, Jiangsu Province（ 2002)">
+                            <div class="product-info">
+                                <h4>The preassembly site of 2500m³ BF bottom with microporous carbon block is carried out in Zhangjiagang Shagang Group, Jiangsu Province（ 2002)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/furnace3.jpg" alt="特种矿热炉炭砖">
+                            <div class="product-info">
+                                <h4>Preassembly site of ultra microporous carbon block for hearth of 2518m³ blast furnace in Ispat iron and steel company, India（ 2008)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Preassembly site of carbon resistant materials for some large blast furnace（Graphite wall for hearth, inlaid graphite brick for copper cooling wall and graphite brick for copper cooling plate）</h3>
+                        <a href="products/ramming.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/ramming1.jpg" alt="The preassembly site of graphite wall in hearth of	E × 604m³ blast furnace in Tata iron and Steel Company of India（2006)">
+                            <div class="product-info">
+                                <h4>The preassembly site of graphite wall in hearth of	E × 604m³ blast furnace in Tata iron and Steel Company of India（2006)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/ramming2.jpg" alt="Graphite brick inlaid in copper cooling wall of lා 3000m³ blast furnace, Altos hornos iron and steel company, Mexico（2006)">
+                            <div class="product-info">
+                                <h4>Graphite brick inlaid in copper cooling wall of l# 3000m³ blast furnace, Altos hornos iron and steel company, Mexico（2006)</h4>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/paste1.jpg" alt="Graphite brick for inlaying copper cooling stave of 2549m³ blast furnace in Asturias Steel Company of ArcelorMittal group of Spain（2008)">
+                            <div class="product-info">
+                                <h4>Graphite brick for inlaying copper cooling stave of 2549m³ blast furnace in Asturias Steel Company of ArcelorMittal group of Spain（2008)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category">
+                    <div class="category-header">
+                        <h3>Some pre-assembly site of carbon bricks for submerged arc furnaces</h3>
+                        <a href="products/other.html" class="more-link">More &gt;&gt;</a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="images/products/other1.jpg" alt="75MVA Submerged Arc Furnace Installation">
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/other2.jpg" alt="Precision Lining Installation">
+                        </div>
+                        <div class="product-item">
+                            <img src="images/products/other3.jpg" alt="Quality Control Inspection">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/image-viewer.js"></script>
+</body>
+</html> 

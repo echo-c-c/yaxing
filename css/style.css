@@ -1,0 +1,727 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 顶部栏样式 */
+.top-bar {
+    background-color: #f8f8f8;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-info h1 {
+    font-size: 24px;
+    color: #1a5f7a;
+    margin-bottom: 5px;
+}
+
+.company-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info .phone {
+    font-size: 20px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #1a5f7a;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul li {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 10px;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+nav ul li.active a:after,
+nav ul li:hover a:after {
+    width: 70%;
+}
+
+nav ul li.active,
+nav ul li:hover {
+    background-color: #2980b9;
+}
+
+/* 轮播图样式 */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    width: 33.333%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 800px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: white;
+}
+
+/* 主要内容区域样式 */
+main {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 栏目标题样式 */
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e6e6e6;
+    text-align: left;
+}
+
+.section-title h2 {
+    display: inline-block;
+    padding: 0 0 10px 0;
+    font-size: 24px;
+    color: #1a5f7a;
+    position: relative;
+    margin: 0;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #1a5f7a;
+}
+
+/* 公司简介样式 */
+.company-intro {
+    margin-bottom: 50px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.company-intro h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a5f7a;
+    font-size: 28px;
+}
+
+.intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.intro-text p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #444;
+    text-indent: 2em;
+}
+
+.learn-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #1a5f7a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.learn-more-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 产品列表样式 */
+.product-list {
+    padding: 40px 0;
+}
+
+.product-list h2 {
+    color: #1a5f7a;
+    margin-bottom: 40px;
+}
+
+.product-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.product-category {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px; /* 为锚点滚动预留空间 */
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.category-header h3 {
+    font-size: 24px;
+    color: #333;
+    position: relative;
+    padding-left: 15px;
+}
+
+.category-header h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background-color: #1e50a2;
+}
+
+.more-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.more-link:hover {
+    color: #1a5f7a;
+    transform: translateX(5px);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1920px) {
+    .carousel {
+        min-height: 600px;
+        max-height: 800px;
+    }
+
+    .carousel-slide img {
+        max-height: 800px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .carousel {
+        min-height: 500px;
+        max-height: 700px;
+    }
+
+    .carousel-slide img {
+        max-height: 700px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        max-width: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        padding: 15px;
+    }
+
+    nav ul li a:after {
+        display: none;
+    }
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+
+    .carousel {
+        min-height: 200px;
+        max-height: 400px;
+    }
+
+    .carousel-slide img {
+        max-height: 400px;
+    }
+
+    .carousel-button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .product-category {
+        padding: 20px;
+    }
+
+    .product-category h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-item img {
+        height: 180px;
+    }
+
+    .product-info h4 {
+        font-size: 15px;
+    }
+
+    .product-info p {
+        font-size: 13px;
+    }
+
+    .category-header h3 {
+        font-size: 20px;
+    }
+
+    .more-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        min-height: 150px;
+        max-height: 300px;
+    }
+
+    .carousel-slide img {
+        max-height: 300px;
+    }
+}
+
+/* 关于我们页面样式 */
+.about-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-content h2 {
+    text-align: center;
+    color: #1a5f7a;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-content h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1a5f7a;
+    margin: 15px auto 0;
+}
+
+.about-content h3 {
+    color: #1a5f7a;
+    font-size: 24px;
+    margin: 30px 0 15px;
+}
+
+.about-text {
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 16px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+}
+
+/* 联系方式样式 */
+.contact-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.contact-details p {
+    margin-bottom: 6px;
+    color: #666;
+    font-size: 16px;
+    text-indent: 0;
+}
+
+.contact-details p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-details {
+        margin-top: 15px;
+        padding-top: 12px;
+    }
+
+    .contact-details p {
+        font-size: 15px;
+    }
+}
+
+/* 联系我们页面样式 */
+.contact-section {
+    padding: 50px 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-info-box {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.info-item {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 24px;
+    color: #1a5f7a;
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info-box {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+/* 联系我们页面样式 - 简化版 */
+.contact-info-simple {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-simple h3 {
+    font-size: 24px;
+    color: #1a5f7a;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.info-list {
+    padding: 20px;
+}
+
+.info-list p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-list i {
+    color: #1a5f7a;
+    width: 25px;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-info-simple {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .contact-info-simple h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-list p {
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+} 
